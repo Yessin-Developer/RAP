@@ -1,0 +1,11 @@
+# Ignore all files in .ddev except config files
+/*
+!/.gitignore
+!/config.yaml
+!/config.*.yaml
+!/docker-compose.*.yaml
+!/nginx_full/
+!/apache/
+!/mysql/
+!/web-build/
+

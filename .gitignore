@@ -1,0 +1,53 @@
+# WordPress
+wordpress/
+wp-config.php
+*.log
+
+# SSL Certificates
+.docker/nginx/certs/*.key
+.docker/nginx/certs/*.crt
+.docker/nginx/certs/*.pem
+
+# DDEV
+.ddev/.*.yaml
+.ddev/homeadditions
+.ddev/commands/web/
+.ddev/commands/db/
+.ddev/commands/host/
+.ddev/.global_commands
+.ddev/import-db/
+.ddev/.dbimageBuild
+.ddev/.webimageBuild
+.ddev/.homeadditions
+
+# Docker
+.docker/
+
+# Database
+*.sql
+*.sql.gz
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Node
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Composer
+vendor/
+
+# Environment
+.env
+.env.local
+
