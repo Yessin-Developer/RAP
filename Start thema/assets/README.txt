@@ -1,0 +1,1 @@
+Put your compiled assets in assets/dist (main.js, main.css). This theme expects assets/dist/main.js if present.

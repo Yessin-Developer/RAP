@@ -1,0 +1,1 @@
+<section class="no-results"><h2>Niets gevonden</h2><p>Probeer een andere zoekopdracht.</p></section>
