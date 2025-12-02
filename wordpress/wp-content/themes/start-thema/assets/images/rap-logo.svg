@@ -1,0 +1,29 @@
+<svg width="125" height="125" viewBox="0 0 125 125" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Top segment -->
+  <path d="M62.5 0L50 30L62.5 40L75 30L62.5 0Z" fill="#FF6B35"/>
+  
+  <!-- Top-right segment -->
+  <path d="M88.39 11.61L75 30L82.5 42.5L100 36.61L88.39 11.61Z" fill="#FF6B35"/>
+  
+  <!-- Right segment -->
+  <path d="M125 62.5L95 50L85 62.5L95 75L125 62.5Z" fill="#FF6B35"/>
+  
+  <!-- Bottom-right segment -->
+  <path d="M113.39 88.39L95 75L82.5 82.5L88.39 100L113.39 88.39Z" fill="#FF6B35"/>
+  
+  <!-- Bottom segment -->
+  <path d="M62.5 125L75 95L62.5 85L50 95L62.5 125Z" fill="#FF6B35"/>
+  
+  <!-- Bottom-left segment -->
+  <path d="M36.61 113.39L50 95L42.5 82.5L25 88.39L36.61 113.39Z" fill="#FF6B35"/>
+  
+  <!-- Left segment -->
+  <path d="M0 62.5L30 75L40 62.5L30 50L0 62.5Z" fill="#FF6B35"/>
+  
+  <!-- Top-left segment -->
+  <path d="M11.61 36.61L30 50L42.5 42.5L36.61 25L11.61 36.61Z" fill="#FF6B35"/>
+  
+  <!-- Center circle -->
+  <circle cx="62.5" cy="62.5" r="15" fill="#FF6B35"/>
+</svg>
+

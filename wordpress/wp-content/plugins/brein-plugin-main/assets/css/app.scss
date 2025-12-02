@@ -1,0 +1,427 @@
+
+:root {
+    --primary-color: #56E39F;
+    --text-color: #FFFFFF;
+    --text-dark-color: #092931;
+    --dark-color: #092931;
+    --dark-accent-color: #16343C;
+    --border-radius: 8px;
+}
+
+
+body {
+    background: white;
+    color: rgba($color: black, $alpha: 0.8);
+}
+#wpadminbar {
+    background: var(--dark-color);
+    width: calc(100vw - 10px);
+    border-radius: var(--border-radius);
+    left: 5px;
+    top: 5px;
+}
+
+.notice-info {
+    background: white !important;
+    color: var(--dark-color) !important;
+    font-weight: bold !important;
+    text-align: center;
+    border-radius: var(--border-radius);
+    border-left: none !important;
+}
+
+.login {
+    background: var(--dark-color);
+    h1 {
+        a {
+            background: url('https://burobrein.nl/wp-content/uploads/2025/09/logo-burobrein-2025.svg')!important;
+            background-size: contain !important;
+            background-repeat: no-repeat !important;
+            width: 100% !important;
+            pointer-events: none !important;
+        }
+    }
+    #loginform {
+        border-radius: var(--border-radius);
+        border: none;
+        background: var(--dark-accent-color) !important;
+        label {
+            color: var(--text-color) !important;
+        }
+        input[type="text"], input[type="email"], input[type="password"] {
+            background: rgba(white, .1) !important;
+            border: 1px solid rgba(white, 0) !important;
+            color: white !important;
+            &:focus {
+                border: 1px solid var(--primary-color) !important;
+                box-shadow: none !important;
+            }
+        }
+        input[type="checkbox"] {
+            background: rgba(white, .1) !important;
+            border: 1px solid rgba(white, 0) !important;
+            color: white !important;
+            width: 20px;
+            height: 20px;
+            &:focus {
+                border: 1px solid var(--primary-color) !important;
+                box-shadow: none !important;
+            }
+            &:checked {
+                background: var(--primary-color) !important;
+                border: 1px solid var(--primary-color) !important;
+                &::before {
+                    content: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M13.3333 4L5.99996 11.3333L2.66663 8' stroke='%23ffffff' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
+                    line-height: 28px;
+                    text-align: center;
+                }
+            }
+        }
+    }
+    #login > p {
+        background: rgba(white, .05) !important;
+        border-radius: 0 0 var(--border-radius) var(--border-radius);
+        margin: 0;
+        padding-bottom: 10px;
+        a {
+            color: rgba(white, .7) !important;
+            &:hover {
+                color: white !important;
+            }
+        }
+        &#nav {
+            padding-top: 10px;
+            border-radius: var(--border-radius) var(--border-radius) 0 0;
+            margin-top: 10px;
+        }
+    }
+}
+
+#adminmenuback {
+    background: none;
+    // padding: 0 10px;
+}
+#adminmenuwrap {
+    width: 170px;
+    padding: 5px 20px;
+
+}
+#adminmenu {
+    width: 170px;
+    .wp-menu-arrow {
+        display: none !important;
+    }
+    li {
+        .wp-menu-name {
+            // font-size: 13px;
+            padding: 8px 8px 8px 40px !important;
+        }
+    }
+}
+
+#adminmenu li>a.menu-top:focus {
+    background: var(--dark-accent-color) !important;
+}
+#adminmenu li.opensub>.svg {
+    filter: grayscale(100%) brightness(2)!important;
+}
+
+#adminmenuwrap, #adminmenu {
+    left: 5px;
+    top: 40px;
+    border-radius: var(--border-radius);
+    background: var(--dark-color);
+    .wp-has-current-submenu {
+        border-radius: var(--border-radius);
+        background: rgba(255, 255, 255, 0.15) !important;
+    }
+    .wp-submenu {
+        background: var(--dark-color) !important;
+        color: white !important;
+    }
+    .wp-has-submenu {
+        border-radius: var(--border-radius);
+    }
+    .opensub {
+        background: var(--dark-color) !important;
+        a.menu-top {
+            background: var(--dark-accent-color) !important;
+            border-radius: var(--border-radius);
+        }
+        &::after {
+            border-right-color: var(--dark-accent-color) !important;
+        }
+    }
+    a:hover {
+        color: white !important;
+    }
+}
+
+#wpadminbar .ab-top-menu>li.hover>.ab-item, #wpadminbar.nojq .quicklinks .ab-top-menu>li>.ab-item:focus, #wpadminbar:not(.mobile) .ab-top-menu>li:hover>.ab-item, #wpadminbar:not(.mobile) .ab-top-menu>li>.ab-item:focus,
+#wpadminbar .menupop .ab-sub-wrapper, #wpadminbar .shortlink-input {
+    background: var(--dark-accent-color) !important;
+    border-radius: var(--border-radius);
+    color: white !important;
+}
+
+#wpadminbar:not(.mobile)>#wp-toolbar a:focus span.ab-label, #wpadminbar:not(.mobile)>#wp-toolbar li:hover span.ab-label, #wpadminbar>#wp-toolbar li.hover span.ab-label,
+#wpadminbar .quicklinks .ab-sub-wrapper .menupop.hover>a, #wpadminbar .quicklinks .menupop ul li a:focus, #wpadminbar .quicklinks .menupop ul li a:focus strong, #wpadminbar .quicklinks .menupop ul li a:hover, #wpadminbar .quicklinks .menupop ul li a:hover strong, #wpadminbar .quicklinks .menupop.hover ul li a:focus, #wpadminbar .quicklinks .menupop.hover ul li a:hover, #wpadminbar .quicklinks .menupop.hover ul li div[tabindex]:focus, #wpadminbar .quicklinks .menupop.hover ul li div[tabindex]:hover, #wpadminbar li #adminbarsearch.adminbar-focused:before, #wpadminbar li .ab-item:focus .ab-icon:before, #wpadminbar li .ab-item:focus:before, #wpadminbar li a:focus .ab-icon:before, #wpadminbar li.hover .ab-icon:before, #wpadminbar li.hover .ab-item:before, #wpadminbar li:hover #adminbarsearch:before, #wpadminbar li:hover .ab-icon:before, #wpadminbar li:hover .ab-item:before, #wpadminbar.nojs .quicklinks .menupop:hover ul li a:focus, #wpadminbar.nojs .quicklinks .menupop:hover ul li a:hover,
+#adminmenu li.menu-top:hover, #adminmenu li.opensub>a.menu-top, #adminmenu li>a.menu-top:focus,
+#adminmenu li a:focus div.wp-menu-image:before, #adminmenu li.opensub div.wp-menu-image:before, #adminmenu li:hover div.wp-menu-image:before {
+    color: white !important;
+}
+
+.wp-list-table thead *, .wp-list-table tfoot * {
+    color: var(--text-dark-color) !important;
+}
+
+.folded #wpcontent {
+    margin-left: 80px;
+
+}
+
+#adminmenu li:hover {
+    background: var(--dark-accent-color) !important;
+    > a {
+        color: white !important;
+        &:hover {
+            color: white !important;
+        }
+    }
+    .wp-menu-image:before {
+        color: white !important;
+    }
+}
+
+#wpcontent {
+    margin-left: 210px;
+}
+
+#wp-admin-bar-wp-logo, #wp-admin-bar-wp-logo:hover  {
+    border-radius: var(--border-radius) !important;
+    .ab-icon {
+        background: none;
+        &::before {
+            content: '' !important;
+            color: transparent;
+            background-image: url('https://burobrein.nl/wp-content/uploads/2025/09/favicon.png');
+            background-size: contain;
+            width: 20px;
+            height: 20px;
+        }
+        &::after {
+            content: '';
+            display: block;
+            position: relative;
+            top: 2px;
+            left: 2px;
+            color: transparent;
+            background-image: url('https://burobrein.nl/wp-content/uploads/2025/09/favicon.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            width: 20px;
+            height: 20px;
+        }
+    }
+}
+
+.page-title-action {
+    // background: red !important;
+}
+
+.wp-submenu-wrap {
+    width: 170px !important;
+    // background: black !important;
+    border-radius: var(--border-radius) !important;
+}
+.ab-submenu, .wp-has-current-submenu .wp-submenu-wrap  {
+    width: 170px !important;
+    background: rgba(255, 255, 255, 0.05) !important;
+    border-radius:  0 0 var(--border-radius) var(--border-radius) !important;
+}
+
+ul#adminmenu a.wp-has-current-submenu:after {
+    display: none !important;
+}
+
+#adminmenu a:focus, #adminmenu a:hover, .folded #adminmenu .wp-submenu-head:hover {
+    box-shadow: none !important;
+}
+
+.wp-list-table {
+    border-radius: var(--border-radius) !important;
+    border: none !important;
+    box-shadow: none !important;
+    th.sortable a, th.sorted a {
+        display: flex;
+    }
+    thead, tfoot {
+        position: relative;
+        z-index: 1;
+        * {
+            color: var(--text-dark-color) !important;
+        }
+        &::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgb(236, 236, 236);
+            border: 1px solid rgb(223, 223, 223);
+            border-radius: var(--border-radius);
+            z-index: -1;
+        }
+    }
+    tbody {
+        border: none !important;
+        box-shadow: none !important;
+        tr:nth-child(odd) {
+            background: rgba(0, 0, 0, 0.04) !important;
+        }
+    }
+    .row-title {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        &:hover {
+
+            &::after {
+                content: '';
+                width: 16px;
+                height: 16px;
+                background-image: url("data:image/svg+xml,%3Csvg width='16' height='17' viewBox='0 0 16 17' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg clip-path='url(%23clip0_239_1915)'%3E%3Cpath d='M6.66668 9.30027C6.95298 9.68302 7.31825 9.99973 7.73771 10.2289C8.15717 10.4581 8.62102 10.5943 9.09778 10.6285C9.57454 10.6626 10.0531 10.5938 10.5009 10.4268C10.9487 10.2597 11.3554 9.99832 11.6933 9.66027L13.6933 7.66027C14.3005 7.0316 14.6365 6.18959 14.6289 5.3156C14.6213 4.44161 14.2708 3.60557 13.6527 2.98754C13.0347 2.36951 12.1987 2.01895 11.3247 2.01136C10.4507 2.00376 9.60868 2.33974 8.98001 2.94694L7.83334 4.08694M9.33334 7.96694C9.04704 7.58418 8.68177 7.26748 8.26231 7.03831C7.84285 6.80914 7.37901 6.67286 6.90224 6.63871C6.42548 6.60457 5.94695 6.67336 5.49911 6.84042C5.05127 7.00747 4.6446 7.26889 4.30668 7.60694L2.30668 9.60694C1.69948 10.2356 1.3635 11.0776 1.3711 11.9516C1.37869 12.8256 1.72926 13.6616 2.34728 14.2797C2.96531 14.8977 3.80135 15.2483 4.67534 15.2559C5.54933 15.2634 6.39134 14.9275 7.02001 14.3203L8.16001 13.1803' stroke='%231E1E1E' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0_239_1915'%3E%3Crect width='16' height='16' fill='white' transform='translate(0 0.633789)'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E%0A");
+                background-size: contain;
+                background-repeat: no-repeat;
+            }
+        }
+    }
+}
+
+table, caption, tbody, tfoot, thead, tr, th, td {
+
+    border: 0 !important;
+    font: inherit;
+    vertical-align: baseline;
+  }
+  table {
+    border-collapse: collapse;
+    border-spacing: 0;
+  }
+
+  a, .wp-core-ui .button-link {
+    color: rgba($color: #000000, $alpha: .7);
+    &:hover {
+        color: rgba($color: #000000, $alpha: 1);
+    }
+  }
+  .wp-core-ui .button, .wp-core-ui .button-secondary{
+    background: var(--dark-color) !important;
+    border: 1px solid var(--dark-color) !important;
+    color: var(--text-color) !important;
+    &:focus {
+        border: 1px solid var(--primary-color) !important;
+        box-shadow: none !important;
+    }
+  }
+
+  #wp-auth-check {
+    border-radius: var(--border-radius) !important;
+  }
+
+  .wp-core-ui .button-primary, .page-title-action {
+    background-color: var(--primary-color) !important;
+    border: none !important;
+    transition: all .25s cubic-bezier(.175,.885,.32,1);
+    color: var(--dark-color) !important;
+
+    font-size: 14px !important;
+
+
+    &:hover {
+        background: var(--primary-color) !important;
+    }
+  }
+
+.wp-core-ui .button-primary#wp-submit {
+    width: 100% !important;
+    padding: 8px 16px !important;
+    min-height: 0 !important;
+    line-height: 1.5 !important;
+    margin-top: 1em !important;
+}
+
+  .wp-core-ui .button-secondary.wp-hide-pw {
+    border: unset !important;
+    background: rgba(black, 0) !important;
+  }
+
+  body.wp-core-ui:not(.login) {
+    .button {
+        // color: black !important;
+    }
+  }
+
+  .wp-menu-separator {
+    display: none;
+  }
+
+  .bb-contact-us {
+    display: flex;
+    gap: 20px;
+    > div {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        width: 220px;
+        padding: 20px 30px;
+        background: #dddddd;
+        border: 1px solid rgba(black, .1);
+        border-radius: var(--border-radius);
+        span {
+            transform: translateY(2px);
+        }
+        a {
+            color: black;
+            font-weight: bold;
+            -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    // text rendering
+    text-rendering: optimizeLegibility;
+            font-size: 21px;
+            text-decoration: none;
+            padding-bottom: 4px;
+            background: linear-gradient(90deg, #000, #000) no-repeat right bottom / 100% 2px;
+            transition: background-size .25s cubic-bezier(.175,.885,.32,1);
+            &:hover {
+                background-size: 0% 2px;
+                background-position-x: left;
+            }
+
+        }
+    }
+  }
+
+  #adminmenu li.wp-has-submenu.wp-not-current-submenu:focus-within:after {
+    border: none !important;
+  }
+
+  #wp-auth-check-wrap #wp-auth-check {
+    background: var(--dark-color) !important;
+  }
+
+  .editor-post-featured-image__preview .editor-post-featured-image__preview-image {
+    max-width: 400px;
+  }
+
+  .brein-qam {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+    background: var(--qam-body);
+    padding: 20px;
+    border-radius: 24px 24px 0 0 ;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+  }

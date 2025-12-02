@@ -1,0 +1,267 @@
+.brein-qam {
+    position: fixed;
+    bottom: 2em;
+    right: 2em;
+    width: 36rem;
+    max-width: 100%;
+    z-index: 999999;
+    display: flex;
+    flex-direction: column;
+    pointer-events: none;
+    [data-whatsapp-modal-qr-canvas] {
+        width: 8em;
+        path {
+            fill: var(--qam-whatsapp);
+        }
+
+    }
+    &[data-whatsapp-modal-status="active"] {
+        pointer-events: auto;
+        .brein-qam__popup-container {
+            pointer-events: auto;
+            transform: translateY(0);
+            opacity: 1;
+            visibility: visible;
+        }
+        .brein-qam__popup-trigger {
+            width: 3em !important;
+            height: 3em !important;
+            border-radius: 3em !important;
+            padding: 0;
+            span {
+                opacity: 0;
+                scale: 0;
+            }
+            .trigger-close {
+                opacity: 1;
+                scale: 1;
+            }
+        }
+    }
+    @media (max-width: 768px) {
+        width: 100%;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        border-radius: 1.5em 1.5em 0 0;
+    }
+}
+
+.brein-qam__popup-trigger {
+    position: relative;
+    display: flex;
+    align-items: center;
+    border: 1px solid rgba(white, .1);
+    justify-content: center;
+    margin-left: auto;
+
+    height: 3em;
+    background: var(--qam-popup_background);
+    padding: .5em 1em;
+    gap: 1em;
+    color: var(--qam-popup_text) !important;
+    border-radius: .5em;
+    pointer-events: auto;
+    transition: width .3s ease, border-radius .1s ease;
+    svg {
+        path {
+            stroke: var(--qam-popup_icon);
+            fill: transparent;
+        }
+    }
+    .trigger-close {
+        opacity: 0;
+        scale: .5;
+        position: absolute;
+        height: 16px;
+        width: 16px;
+        transition: all .3s ease;
+        svg {
+            height: 16px;
+            width: 16px;
+        }
+        svg line {
+            stroke: var(--qam-popup_icon);
+        }
+    }
+    @media (max-width: 768px) {
+
+        position: absolute;
+        bottom: 2rem;
+        right: 2rem;
+    }
+}
+@media (max-width: 768px) {
+[data-whatsapp-modal-status="active"] {
+    .brein-qam__popup-trigger {
+        position: relative;
+        order: -1;
+        bottom: 1rem;
+    }
+}
+}
+
+.brein-qam__title {
+    font-size: 1.25em;
+    font-weight: 600;
+    text-align: center;
+}
+
+.brein-qam__text {
+    font-size: 1em;
+    opacity: .5;
+    text-align: center;
+}
+
+.brein-qam__tooltip {
+    position: absolute;
+    bottom: 4em;
+    right: 0;
+    background: var(--qam-popup_background);
+    color: var(--qam-popup_text);
+    padding: .75em 1.5em;
+    border-radius: 1em;
+    z-index: 2;
+    opacity: 0;
+    transform: translateY(8px);
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity .25s cubic-bezier(.175,.885,.32,1), transform .25s cubic-bezier(.175,.885,.32,1), visibility .25s cubic-bezier(.175,.885,.32,1);
+    .tooltip-arrow {
+        position: absolute;
+        right: 1em;
+        bottom: -.75em;
+        path {
+            fill: var(--qam-popup_background);
+        }
+    }
+
+    &.is-visible {
+        opacity: 1;
+        transform: translateY(0);
+        visibility: visible;
+        pointer-events: auto;
+    }
+    &.is-hidden {
+        display: none !important;
+    }
+}
+.brein-qam__popup-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    height: 100%;
+    background: var(--qam-body);
+    color: var(--qam-text) !important;
+    position: relative;
+    bottom: 1em;
+    border-radius: 1.5em;
+    overflow: hidden;
+    transform: translateY(10%);
+    opacity: 0;
+    pointer-events: none;
+    visibility: hidden;
+    box-shadow: 0 0 24px 0 rgba(0, 0, 0, 0.1);
+    transition: transform .25s cubic-bezier(.175,.885,.32,1), opacity .25s cubic-bezier(.175,.885,.32,1), visibility .25s cubic-bezier(.175,.885,.32,1);
+    @media (max-width: 768px) {
+        bottom: 0;
+        border-radius: 1.5em 1.5em 0 0;
+    }
+}
+
+.brein-qam__header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background: var(--qam-header);
+    padding: 1em 2em;
+    pointer-events: none;
+}
+
+.brein-qam__whatsapp-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    // gap: 10px;
+    [data-whatsapp-modal-qr-canvas] {
+        margin-bottom: .25em;
+    }
+    @media (max-width: 768px) {
+        display: none;
+    }
+}
+
+.brein-qam__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 1em;
+
+    .brein-qam__items {
+        display: flex;
+        flex-direction: column;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+
+        a {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+            padding: .75em 1.5em;
+            background: var(--qam-body);
+            border-radius: .75em;
+            transition: all .25s cubic-bezier(.175,.885,.32,1);
+            .brein-qam__link-content {
+                display: flex;
+                align-items: center;
+                gap: 1em;
+                svg {
+                    width: 20px;
+                    height: 20px;
+                    path {
+                        fill: var(--qam-text);
+                        transition: all .25s cubic-bezier(.175,.885,.32,1);
+                    }
+                }
+            }
+            &::after {
+                content: '';
+                -webkit-mask-image: url("data:image/svg+xml,%3Csvg width='9' height='16' viewBox='0 0 9 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7.68324 5.7033L2.71074 0.730797C2.50777 0.529025 2.23319 0.415771 1.94699 0.415771C1.66079 0.415771 1.38622 0.529025 1.18324 0.730797C1.0817 0.831507 1.00111 0.951324 0.946109 1.08334C0.89111 1.21535 0.862793 1.35695 0.862793 1.49996C0.862793 1.64298 0.89111 1.78457 0.946109 1.91659C1.00111 2.0486 1.0817 2.16842 1.18324 2.26913L6.16658 7.2308C6.26811 7.33151 6.34871 7.45132 6.40371 7.58334C6.45871 7.71535 6.48702 7.85695 6.48702 7.99996C6.48702 8.14298 6.45871 8.28457 6.40371 8.41659C6.34871 8.5486 6.26811 8.66842 6.16658 8.76913L1.18324 13.7308C0.979245 13.9334 0.864071 14.2087 0.863055 14.4961C0.86204 14.7836 0.975266 15.0597 1.17783 15.2637C1.38038 15.4677 1.65568 15.5829 1.94316 15.5839C2.23064 15.5849 2.50675 15.4717 2.71074 15.2691L7.68324 10.2966C8.29186 9.68725 8.63372 8.86122 8.63372 7.99996C8.63372 7.13871 8.29186 6.31267 7.68324 5.7033Z' fill='%2316343C'/%3E%3C/svg%3E%0A");
+                mask-image: url("data:image/svg+xml,%3Csvg width='9' height='16' viewBox='0 0 9 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7.68324 5.7033L2.71074 0.730797C2.50777 0.529025 2.23319 0.415771 1.94699 0.415771C1.66079 0.415771 1.38622 0.529025 1.18324 0.730797C1.0817 0.831507 1.00111 0.951324 0.946109 1.08334C0.89111 1.21535 0.862793 1.35695 0.862793 1.49996C0.862793 1.64298 0.89111 1.78457 0.946109 1.91659C1.00111 2.0486 1.0817 2.16842 1.18324 2.26913L6.16658 7.2308C6.26811 7.33151 6.34871 7.45132 6.40371 7.58334C6.45871 7.71535 6.48702 7.85695 6.48702 7.99996C6.48702 8.14298 6.45871 8.28457 6.40371 8.41659C6.34871 8.5486 6.26811 8.66842 6.16658 8.76913L1.18324 13.7308C0.979245 13.9334 0.864071 14.2087 0.863055 14.4961C0.86204 14.7836 0.975266 15.0597 1.17783 15.2637C1.38038 15.4677 1.65568 15.5829 1.94316 15.5839C2.23064 15.5849 2.50675 15.4717 2.71074 15.2691L7.68324 10.2966C8.29186 9.68725 8.63372 8.86122 8.63372 7.99996C8.63372 7.13871 8.29186 6.31267 7.68324 5.7033Z' fill='%2316343C'/%3E%3C/svg%3E%0A");
+
+                width: 1em;
+                height: 1em;
+                -webkit-mask-size: contain;
+                mask-size: contain;
+                -webkit-mask-repeat: no-repeat;
+                mask-repeat: no-repeat;
+                -webkit-mask-position: center;
+                mask-position: center;
+                background-color: currentColor;
+            }
+            &:hover {
+                background: var(--qam-hover);
+                color: var(--qam-hover_text);
+                svg {
+                    path {
+                        fill: var(--qam-hover_text);
+                    }
+                }
+            }
+        }
+    }
+}
+
+.brein-qam__logo {
+    width: 100%;
+    height: 100%;
+    max-width: 15rem;
+    max-height: 3.5em;
+    object-fit: contain;
+}

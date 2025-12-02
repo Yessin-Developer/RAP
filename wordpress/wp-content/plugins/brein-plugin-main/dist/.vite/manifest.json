@@ -1,0 +1,23 @@
+{
+  "assets/js/front.js": {
+    "file": "assets/front-DZ9R55Ts.js",
+    "name": "front",
+    "src": "assets/js/front.js",
+    "isEntry": true,
+    "css": [
+      "assets/front-DL-KuiIf.css"
+    ]
+  },
+  "main.js": {
+    "file": "assets/admin-DYrFkwqq.js",
+    "name": "admin",
+    "src": "main.js",
+    "isEntry": true,
+    "imports": [
+      "assets/js/front.js"
+    ],
+    "css": [
+      "assets/admin-CtZj5vPX.css"
+    ]
+  }
+}

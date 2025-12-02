@@ -1,0 +1,336 @@
+/*
+Theme Name: RAP Wonen Theme
+Theme URI:  https://example.com/
+Author: RAP Wonen
+Author URI: https://rapwonen.nl/
+Description: Custom theme for RAP Wonen website
+Version: 1.0
+License: GNU General Public License v2 or later
+Text Domain: rap-wonen
+*/
+
+/* ===========================
+   RESET & BASE STYLES
+   =========================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: #1a3a52;
+}
+
+/* ===========================
+   HEADER STYLES
+   =========================== */
+.site-header {
+    background-color: #1a3a52;
+    padding: 0;
+    position: relative;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.site-header .header-container {
+    max-width: 1440px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 40px;
+    height: 80px;
+}
+
+
+/* Logo Styles */
+.site-logo {
+    display: block;
+    line-height: 0;
+}
+
+.site-logo-full {
+    height: 50px;
+    width: auto;
+    display: block;
+}
+
+/* Navigation Styles */
+.site-nav {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    margin: 0 40px;
+}
+
+.site-nav ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    margin: 0;
+    padding: 0;
+}
+
+.site-nav ul li {
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+
+.site-nav ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 400;
+    padding: 10px 0;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: color 0.3s ease;
+    white-space: nowrap;
+}
+
+.site-nav ul li a:hover {
+    color: #FF8C42;
+}
+
+/* Dropdown indicator */
+.site-nav ul li.menu-item-has-children > a::after {
+    content: '';
+    width: 0;
+    height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid #ffffff;
+    margin-left: 2px;
+    display: inline-block;
+    transition: border-top-color 0.3s ease, transform 0.3s ease;
+}
+
+.site-nav ul li.menu-item-has-children > a:hover::after {
+    border-top-color: #FF8C42;
+}
+
+.site-nav ul li.menu-item-has-children:hover > a::after {
+    transform: rotate(180deg);
+}
+
+/* Submenu Dropdown Styles */
+.site-nav ul li.menu-item-has-children {
+    position: relative;
+}
+
+.site-nav ul li .sub-menu {
+    position: absolute;
+    top: calc(100% + 20px);
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #ffffff;
+    min-width: 220px;
+    border-radius: 8px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    padding: 12px 0;
+    list-style: none;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 1000;
+    margin: 0;
+}
+
+.site-nav ul li.menu-item-has-children:hover > .sub-menu {
+    opacity: 1;
+    visibility: visible;
+    top: calc(100% + 10px);
+}
+
+.site-nav ul li .sub-menu::before {
+    content: '';
+    position: absolute;
+    top: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-bottom: 8px solid #ffffff;
+}
+
+.site-nav ul li .sub-menu li {
+    margin: 0;
+    padding: 0;
+}
+
+.site-nav ul li .sub-menu li a {
+    color: #1a3a52;
+    padding: 12px 24px;
+    display: block;
+    font-size: 14px;
+    font-weight: 400;
+    white-space: nowrap;
+    transition: all 0.3s ease;
+    border-left: 3px solid transparent;
+}
+
+.site-nav ul li .sub-menu li a:hover {
+    color: #FF8C42;
+    background-color: rgba(255, 140, 66, 0.05);
+    border-left-color: #FF8C42;
+    padding-left: 28px;
+}
+
+.site-nav ul li .sub-menu li:first-child a {
+    border-radius: 8px 8px 0 0;
+}
+
+.site-nav ul li .sub-menu li:last-child a {
+    border-radius: 0 0 8px 8px;
+}
+
+/* CTA Button */
+.header-cta {
+    display: flex;
+    align-items: center;
+}
+
+.cta-button {
+    background-color: #FF8C42;
+    color: #ffffff;
+    border: none;
+    padding: 12px 42px 12px 24px;
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    clip-path: polygon(0 0, calc(100% - 16px) 0, 100% 50%, calc(100% - 16px) 100%, 0 100%);
+    position: relative;
+    overflow: visible;
+    letter-spacing: 0.2px;
+}
+
+/* Inner content wrapper voor de achtergrond */
+.cta-button::before {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    right: 2px;
+    bottom: 2px;
+    background-color: #1a3a52;
+    clip-path: polygon(0 0, calc(100% - 15px) 0, calc(100% - 2px) 50%, calc(100% - 15px) 100%, 0 100%);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: -1;
+}
+
+/* Shimmer effect */
+.cta-button::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s ease;
+    z-index: 1;
+}
+
+.cta-button:hover::after {
+    left: 100%;
+}
+
+.cta-button:hover::before {
+    background-color: #FF8C42;
+}
+
+.cta-button:hover {
+    transform: translateX(3px);
+    filter: drop-shadow(0 3px 8px rgba(255, 140, 66, 0.3));
+}
+
+.cta-button:hover .cta-button-arrow {
+    transform: translateX(3px);
+}
+
+.cta-button:active {
+    transform: translateX(1px) scale(0.98);
+}
+
+.cta-button-arrow {
+    width: 16px;
+    height: 16px;
+    position: relative;
+    flex-shrink: 0;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.cta-button-arrow::before {
+    content: '';
+    position: absolute;
+    width: 12px;
+    height: 2px;
+    background-color: #ffffff;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    transition: all 0.3s ease;
+}
+
+.cta-button-arrow::after {
+    content: '';
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    border-right: 2px solid #ffffff;
+    border-top: 2px solid #ffffff;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%) rotate(45deg);
+    transition: all 0.3s ease;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .site-header .header-container {
+        padding: 0 24px;
+    }
+    
+    .site-nav ul {
+        gap: 24px;
+    }
+    
+    .site-nav ul li a {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 992px) {
+    .site-header .header-container {
+        height: auto;
+        padding: 16px 24px;
+    }
+    
+    .site-nav {
+        display: none;
+    }
+    
+    .header-cta {
+        margin-left: auto;
+    }
+}
+
+/* ===========================
+   MAIN CONTENT STYLES
+   =========================== */
+#site-content {
+    min-height: calc(100vh - 80px);
+}

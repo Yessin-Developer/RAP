@@ -1,0 +1,23 @@
+{
+  "name": "snella",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "cross-env NODE_ENV=development vite",
+    "build": "vite build"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^10.4.18",
+    "cross-env": "^7.0.3",
+    "css-loader": "^6.10.0",
+    "kjua": "^0.10.0",
+    "postcss": "^8.4.35",
+    "postcss-scss": "^4.0.9",
+    "vite": "^5.1.6",
+    "vite-plugin-live-reload": "^3.0.3"
+  },
+  "dependencies": {
+    "sass": "^1.77.8"
+  }
+}

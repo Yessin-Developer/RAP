@@ -1,53 +1,25 @@
 # WordPress
-wordpress/
-wp-config.php
-*.log
-
-# SSL Certificates
-.docker/nginx/certs/*.key
-.docker/nginx/certs/*.crt
-.docker/nginx/certs/*.pem
-
-# DDEV
-.ddev/.*.yaml
-.ddev/homeadditions
-.ddev/commands/web/
-.ddev/commands/db/
-.ddev/commands/host/
-.ddev/.global_commands
-.ddev/import-db/
-.ddev/.dbimageBuild
-.ddev/.webimageBuild
-.ddev/.homeadditions
-
-# Docker
-.docker/
-
-# Database
-*.sql
-*.sql.gz
-
-# macOS
-.DS_Store
-.AppleDouble
-.LSOverride
-
-# Editors
-.vscode/
-.idea/
-*.swp
-*.swo
-*~
-
-# Node
-node_modules/
-npm-debug.log
-yarn-error.log
+wordpress/wp-config.php
+wordpress/.htaccess
 
 # Composer
 vendor/
+composer.lock
 
-# Environment
-.env
-.env.local
+# Node
+node_modules/
+package-lock.json
 
+# Build files
+*.log
+*.cache
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
